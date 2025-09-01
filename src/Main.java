@@ -1,8 +1,7 @@
 public class Main {
     public static void main(String[] args) {
         TaskManager manager = new TaskManager();
-
-
+// я надеюсь, что в этот раз все получилось. я пыталась связаться с вами в пачке, но не нашла вашего контакта
         Task task1 = new Task("Задача 1", "Описание задачи 1");
         Task task2 = new Task("Задача 2", "Описание задачи 2");
         manager.createTask(task1);
