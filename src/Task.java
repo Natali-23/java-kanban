@@ -1,28 +1,49 @@
-package task;
+package taskmanager;
 
-import java.util.ArrayList;
-import java.util.List;
+public class Task {
+    private int id;
+    private String name;
+    private String description;
+    private Status status = Status.NEW;
 
-public class Epic extends Task {
-    private List<Integer> subtaskIds = new ArrayList<>();
-
-    public Epic(String name, String description) {
-        super(name, description);
+    public int getId() {
+        return id;
     }
 
-    public List<Integer> getSubtaskIds() {
-        return subtaskIds;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void addSubtask(int subtaskId) {
-        subtaskIds.add(subtaskId);
+    public String getName() {
+        return name;
     }
 
-    public void removeSubtask(int subtaskId) {
-        subtaskIds.remove((Integer) subtaskId);
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void clearSubtasks() {
-        subtaskIds.clear();
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        return "Task{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", status=" + status +
+                '}';
     }
 }
