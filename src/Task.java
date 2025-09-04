@@ -1,63 +1,28 @@
 package task;
 
-import java.util.Objects;
+import java.util.ArrayList;
+import java.util.List;
 
-public class Task {
-    private int id;
-    private String name;
-    private String description;
-    private Status status;
+public class Epic extends Task {
+    private List<Integer> subtaskIds = new ArrayList<>();
 
-    public Task(String name, String description) {
-        this.name = name;
-        this.description = description;
-        this.status = Status.NEW;
+    public Epic(String name, String description) {
+        super(name, description);
     }
 
-    public int getId() {
-        return id;
+    public List<Integer> getSubtaskIds() {
+        return subtaskIds;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void addSubtask(int subtaskId) {
+        subtaskIds.add(subtaskId);
     }
 
-    public String getName() {
-        return name;
+    public void removeSubtask(int subtaskId) {
+        subtaskIds.remove((Integer) subtaskId);
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public Status getStatus() {
-        return status;
-    }
-
-    protected void setStatusInternal(Status status) {
-        this.status = status;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Task)) return false;
-        Task task = (Task) o;
-        return id == task.id;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
-
-    @Override
-    public String toString() {
-        return "Task{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                ", status=" + status +
-                '}';
+    public void clearSubtasks() {
+        subtaskIds.clear();
     }
 }
