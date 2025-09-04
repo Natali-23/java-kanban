@@ -1,6 +1,4 @@
-package taskmanager.manager;
-
-import taskmanager.model.*;
+package taskmanager;
 
 import java.util.*;
 
