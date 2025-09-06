@@ -1,4 +1,4 @@
-package taskmanager;
+import taskmanager.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -23,10 +23,12 @@ public class Main {
 
         System.out.println("Эпик после добавления сабтасков: " + manager.getEpicById(epicId));
 
-        manager.updateSubtaskStatus(subtask1, Status.DONE);
+        subtask1.setStatus(Status.DONE);
+        manager.updateSubtask(subtask1);
         System.out.println("Эпик после обновления сабтаска 1: " + manager.getEpicById(epicId));
 
-        manager.updateSubtaskStatus(subtask2, Status.DONE);
+        subtask2.setStatus(Status.DONE);
+        manager.updateSubtask(subtask2);
         System.out.println("Эпик после завершения всех сабтасков: " + manager.getEpicById(epicId));
 
         Task task = new Task();
